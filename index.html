@@ -7,35 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Ruairí McConville</h1>
-            <p>Data Scientist | Engineer | Problem Solver</p>
-            <nav>
-                <a href="#projects">Projects</a>
-                <a href="#blog">Blog</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="center">
+        <h1>Ruairí McConville</h1>
+        <p>Data Scientist | Quality Engineer | Problem Solver</p>
+    </section>
 
     <section id="projects" class="container">
-        <h2>GitHub Projects</h2>
+        <h2>Projects</h2>
         <div id="github-projects" class="grid"></div>
     </section>
 
     <section id="blog" class="container">
-        <h2>Latest Blog Posts</h2>
+        <h2>Blog</h2>
         <div class="blog-list">
             <article>
-                <h3>How Data Science is Shaping Modern Manufacturing</h3>
-                <p>Thoughts on applying machine learning and data analytics to improve operational efficiency...</p>
+                <h3>Using Python for Automated QC</h3>
+                <p>Streamlining quality control processes with Python scripting...</p>
                 <a href="#">Read More</a>
             </article>
             <article>
-                <h3>Automating Quality Control with Python</h3>
-                <p>Exploring how simple scripts can save hours of work and reduce human error in QC processes...</p>
+                <h3>Machine Learning in Manufacturing</h3>
+                <p>How predictive analytics improves production outcomes...</p>
                 <a href="#">Read More</a>
             </article>
         </div>
@@ -43,21 +46,21 @@
 
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>Data scientist and quality engineer with a passion for driving value from data...</p>
+        <p>I am a data scientist and quality engineering professional who bridges manufacturing, validation, and data analytics to solve real-world problems with machine learning, Python, and statistical analysis.</p>
     </section>
 
     <section id="contact" class="container">
-        <h2>Contact Me</h2>
+        <h2>Contact</h2>
         <form action="https://formspree.io/f/your-form-id" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="_replyto" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <button type="submit">Send</button>
         </form>
     </section>
 
     <footer>
-        <p>&copy; 2025 Ruairí McConville. All rights reserved.</p>
+        <p>&copy; 2025 Ruairí McConville</p>
     </footer>
 
     <script src="script.js"></script>
