@@ -5,10 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    background: linear-gradient(135deg, #f4f4f4 60%, #e0f7fa 100%);
+    color: #222;
 }
 
 /* Social Icons Bar */
@@ -20,27 +24,36 @@ body {
     top: 0;
     width: 100%;
     z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .socials a {
     color: #fff;
     margin: 0 15px;
     font-size: 22px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s;
+    outline: none;
 }
 
-.socials a:hover {
+.socials a:hover, .socials a:focus {
     color: #00bcd4;
+    transform: scale(1.15);
 }
 
 /* Navigation Bar */
 nav {
     background: #333;
     padding: 12px 0;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     top: 50px; /* enough space under socials bar */
+    width: 100%;
     z-index: 998;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.3s;
+}
+
+nav:hover {
+    background: #222;
 }
 
 nav ul {
@@ -57,32 +70,46 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, background 0.3s;
+    padding: 6px 12px;
+    border-radius: 4px;
+    outline: none;
 }
 
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a:focus {
     color: #00bcd4;
+    background: rgba(0,188,212,0.08);
 }
 
 /* Section Styling */
 section {
-    padding: 160px 20px 60px; /* to avoid overlap with fixed bars */
+    padding: 160px 20px 60px;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.04);
 }
 
 .center {
     text-align: center;
+    background: linear-gradient(120deg, #00bcd4 0%, #e0f7fa 100%);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,188,212,0.08);
+    padding: 60px 20px 40px;
+    margin-bottom: 40px;
 }
 
 .center h1 {
     font-size: 3em;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .center p {
-    font-size: 1.2em;
-    color: #555;
+    font-size: 1.3em;
+    color: #f4f4f4;
 }
 
 /* Grid (for Projects & Blog) */
@@ -97,11 +124,13 @@ section {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    outline: none;
 }
 
-.project:hover, .blog-list article:hover {
-    transform: translateY(-5px);
+.project:hover, .project:focus, .blog-list article:hover, .blog-list article:focus {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,188,212,0.12);
 }
 
 /* Contact Form */
@@ -115,9 +144,16 @@ form {
 
 form input, form textarea {
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1.5px solid #00bcd4;
     border-radius: 6px;
     font-size: 1em;
+    outline: none;
+    transition: border 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border: 1.5px solid #0097a7;
+    background: #e0f7fa;
 }
 
 form button {
@@ -128,11 +164,36 @@ form button {
     border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
-form button:hover {
+form button:hover, form button:focus {
     background: #0097a7;
+    transform: scale(1.05);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1001;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#back-to-top:hover, #back-to-top:focus {
+    background: #0097a7;
+    transform: scale(1.1);
 }
 
 /* Footer */
@@ -143,16 +204,42 @@ footer {
     color: #fff;
     margin-top: 40px;
     font-size: 0.9em;
+    border-radius: 0 0 12px 12px;
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+    section {
+        padding: 120px 10px 40px;
+    }
+    .center {
+        padding: 40px 10px 30px;
+    }
+}
+
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
-
     .socials a {
         margin: 0 8px;
+    }
+    section {
+        padding: 100px 5px 30px;
+    }
+    .center {
+        padding: 30px 5px 20px;
+        font-size: 1em;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1em;
+        bottom: 15px;
+        right: 15px;
     }
 }
