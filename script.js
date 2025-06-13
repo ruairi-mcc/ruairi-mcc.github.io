@@ -1,18 +1,37 @@
-const username = "ruairi-mcc";
-const projectContainer = document.getElementById('github-projects');
+// Example: Render a simple bar chart in the first project
+const ctx = document.getElementById('yieldChart').getContext('2d');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+        datasets: [{
+            label: 'Yield (%)',
+            data: [92, 95, 90, 97],
+            backgroundColor: '#00bcd4'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+    }
+});
 
-fetch(`https://api.github.com/users/${username}/repos`)
-  .then(res => res.json())
-  .then(data => {
-    data.slice(0, 6).forEach(repo => {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || 'No description'}</p>
-        <a href="${repo.html_url}" target="_blank">View on GitHub</a>
-      `;
-      projectContainer.appendChild(card);
-    });
-  })
-  .catch(err => console.error(err));
+// Example: Render a line chart in the second project
+const ctx2 = document.getElementById('maintenanceChart').getContext('2d');
+new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+            label: 'Failures Predicted',
+            data: [2, 1, 0, 3],
+            borderColor: '#0097a7',
+            backgroundColor: 'rgba(0,183,195,0.1)',
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } }
+    }
+});
