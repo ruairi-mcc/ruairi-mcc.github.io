@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Portfolio</title>
+    <title>Ruairí McConville | Data Science Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Ruairí McConville</h1>
+            <p>Data Scientist | Engineer | Problem Solver</p>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I am a passionate developer with a love for creating innovative projects.</p>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of your project.</p>
-            <a href="https://github.com/username/project1">View on GitHub</a>
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>CAPA Data Analysis</h3>
+                <p>Advanced analysis of CAPA data patterns, improving QMS and reducing issue recurrence using Python and Excel.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Automated QC Reporting</h3>
+                <p>Created automated QC dashboards using PowerBI and SQL, saving 1 FTE and improving real-time insight delivery.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Validation Sampling Optimization</h3>
+                <p>Performed statistical modeling and validation analysis with Python and R, resulting in a global 14% reduction in validation failures.</p>
+                <a href="#">View Project</a>
+            </div>
+            <!-- Add more projects here -->
         </div>
-        <!-- Add more projects as needed -->
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am a data-driven professional with 12+ years in regulated industries, blending science, engineering, and analytics to drive innovation. I thrive in transforming complex data into actionable insights that enhance product quality and operational efficiency.</p>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:mcconvilleruairi@gmail.com">mcconvilleruairi@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ruairí-mcc/" target="_blank">ruairí-mcc</a></p>
+        <p>GitHub: <a href="https://github.com/ruairi-mcc" target="_blank">ruairi-mcc</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2025 Ruairí McConville. All rights reserved.</p>
     </footer>
 </body>
 </html>
