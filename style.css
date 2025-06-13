@@ -1,4 +1,4 @@
-/* Reset default browser styling */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    background: #f4f4f4;
     color: #333;
 }
 
@@ -16,18 +15,17 @@ body {
 .socials {
     background: #222;
     text-align: center;
-    padding: 8px 0;
+    padding: 10px 0;
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 999;
 }
 
 .socials a {
     color: #fff;
     margin: 0 15px;
-    font-size: 20px;
-    text-decoration: none;
+    font-size: 22px;
     transition: color 0.3s ease;
 }
 
@@ -41,7 +39,7 @@ nav {
     padding: 12px 0;
     position: fixed;
     width: 100%;
-    top: 40px; /* Adjusted for socials bar */
+    top: 50px; /* enough space under socials bar */
     z-index: 998;
 }
 
@@ -59,21 +57,20 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #00bcd4;
 }
 
-/* Sections */
+/* Section Styling */
 section {
-    padding: 140px 20px 60px; /* Extra top padding to avoid overlap with fixed nav + socials */
+    padding: 160px 20px 60px; /* to avoid overlap with fixed bars */
     max-width: 1000px;
     margin: 0 auto;
 }
 
-/* Home Section */
 .center {
     text-align: center;
 }
@@ -85,16 +82,10 @@ section {
 
 .center p {
     font-size: 1.2em;
-    color: #666;
+    color: #555;
 }
 
-/* Projects and Blog Grid */
-.container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #222;
-}
-
+/* Grid (for Projects & Blog) */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -111,33 +102,6 @@ section {
 
 .project:hover, .blog-list article:hover {
     transform: translateY(-5px);
-}
-
-.blog-list article h3 {
-    margin-bottom: 10px;
-}
-
-.blog-list article p {
-    color: #555;
-}
-
-.blog-list article a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #00bcd4;
-    text-decoration: none;
-}
-
-.blog-list article a:hover {
-    text-decoration: underline;
-}
-
-/* About Section */
-#about p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555;
 }
 
 /* Contact Form */
@@ -181,7 +145,7 @@ footer {
     font-size: 0.9em;
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
@@ -190,9 +154,5 @@ footer {
 
     .socials a {
         margin: 0 8px;
-    }
-
-    .center h1 {
-        font-size: 2em;
     }
 }
