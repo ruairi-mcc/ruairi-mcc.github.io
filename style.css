@@ -6,6 +6,39 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Social Icons Bar */
+.socials {
+    background: #333;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.socials a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.socials a:hover {
+    color: #00bcd4;
+}
+
+/* Existing nav and other styling remains */
+nav {
+    background: #333;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 36px; /* to account for the socials bar */
+}
+
+/* Adjust rest of page for the extra space */
+section {
+    padding: 120px 20px 60px; /* increased top padding */
+}
+
 nav {
     background: #333;
     padding: 10px 0;
@@ -110,27 +143,3 @@ footer {
     padding: 8px 0;
 }
 
-.socials a {
-    color: white;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.socials a:hover {
-    color: #00bcd4;
-}
-
-nav {
-    background: #333;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    top: 36px; /* to account for the socials bar */
-}
-
-
-section {
-    padding: 120px 20px 60px; /* increased top padding */
-}
